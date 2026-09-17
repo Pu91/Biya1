@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরিবারের পরিচয়</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            /* খামের পেজের মতো ডার্ক ব্যাকগ্রাউন্ড */
+            background: radial-gradient(circle, #2a0808 0%, #110000 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;
+        }
+        
+        .container {
+            width: 100%; max-width: 850px; 
+            background: #fffcf2; /* কার্ডের অরিজিনাল কালার */
+            padding: 40px 30px;
+            border-radius: 10px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            border: 3px solid #d4af37; 
+            text-align: center; 
+            position: relative;
+        }
+
+        /* চারকোণায় নকশা */
+        .container::before, .container::after {
+            content: '❁'; position: absolute; font-size: 30px; color: #d4af37; opacity: 0.7;
+        }
+        .container::before { top: 10px; left: 15px; }
+        .container::after { bottom: 10px; right: 15px; }
+
+        /* বিয়ের মূল লোগো */
+        .main-logo {
+            font-size: 45px; margin-bottom: 10px; color: #b71c1c;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h2 { 
+            color: #7a0b10; font-size: 32px; margin-bottom: 30px; 
+            font-family: 'Georgia', serif; border-bottom: 2px solid #d4af37; 
+            display: inline-block; padding-bottom: 10px;
+        }
+
+        /* বর ও কনের লেআউট */
+        .family-wrapper {
+            display: flex; justify-content: space-between; align-items: stretch;
+            background: #fdf5e6; border: 2px dashed #d4af37; border-radius: 10px; padding: 25px;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* মাঝখানের লাইন (Divider) */
+        .divider {
+            width: 3px; background: linear-gradient(to bottom, transparent, #d4af37, transparent);
+            border-radius: 2px; margin: 0 25px;
+        }
+
+        /* দুই দিকের কন্টেন্ট */
+        .side {
+            flex: 1; padding: 10px; text-align: center;
+        }
+
+        /* বর ও কনের আলাদা লোগো */
+        .side-logo {
+            width: 75px; height: 75px; margin: 0 auto 15px auto;
+            background: #7a0b10; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; border: 3px solid #d4af37; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .side h3 { 
+            color: #7a0b10; font-size: 24px; margin-bottom: 20px; 
+            border-bottom: 1px solid #d4af37; padding-bottom: 8px; display: inline-block; 
+        }
+        
+        .details-box { text-align: left; display: inline-block; }
+        .details-box p { margin: 12px 0; font-size: 17px; color: #333; border-bottom: 1px dashed #e0d0a0; padding-bottom: 5px;}
+        .details-box span { font-weight: bold; color: #b71c1c; min-width: 80px; display: inline-block; }
+
+        /* বাটন */
+        .btn {
+            display: inline-block; margin-top: 35px; padding: 12px 40px;
+            background: linear-gradient(45deg, #7a0b10, #b71c1c); color: #fffcf2; 
+            border: 2px solid #d4af37; border-radius: 30px; font-size: 18px; font-weight: bold; 
+            cursor: pointer; text-decoration: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+            animation: pulse 1.5s infinite; transition: 0.3s;
+        }
+        .btn:hover { background: #d4af37; color: #7a0b10; border-color: #7a0b10; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* মোবাইলের জন্য ডিজাইন */
+        @media (max-width: 700px) {
+            .family-wrapper { flex-direction: column; padding: 15px; }
+            .divider { width: 100%; height: 3px; background: linear-gradient(to right, transparent, #d4af37, transparent); margin: 25px 0; }
+            .details-box p { font-size: 15px; }
+            h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- বিয়ের মূল লোগো -->
+        <div class="main-logo">✿ 囍 ✿</div>
+        <h2>পরিবারের পরিচিতি</h2>
+        
+        <div class="family-wrapper">
+            <!-- বর পক্ষ -->
+            <div class="side">
+                <div class="side-logo">🤵</div>
+                <h3>বর পক্ষ</h3>
+                <div class="details-box">
+                    <p><span>বর:</span> রাহুল চ্যাটার্জি</p>
+                    <p><span>পিতা:</span> শ্রী অরুণ চ্যাটার্জি</p>
+                    <p><span>মাতা:</span> শ্রীমতী রীতা চ্যাটার্জি</p>
+                    <p><span>ঠাকুরদা:</span> ৺ সুধীর চ্যাটার্জি</p>
+                    <p><span>ঠাকুমা:</span> শ্রীমতী সাবিত্রী চ্যাটার্জি</p>
+                    <p><span>দাদা:</span> রোহিত চ্যাটার্জি</p>
+                    <p><span>দিদি:</span> স্নেহা ব্যানার্জী</p>
+                </div>
+            </div>
+
+            <!-- মাঝখানের ডিভাইডার লাইন -->
+            <div class="divider"></div>
+
+            <!-- কনে পক্ষ -->
+            <div class="side">
+                <div class="side-logo">👰</div>
+                <h3>কনে পক্ষ</h3>
+                <div class="details-box">
+                    <p><span>কনে:</span> অঞ্জলি দাস</p>
+                    <p><span>পিতা:</span> শ্রী বিকাশ দাস</p>
+                    <p><span>মাতা:</span> শ্রীমতী মায়া দাস</p>
+                    <p><span>দাদু:</span> ৺ হরিকৃষ্ণ দাস</p>
+                    <p><span>দিদা:</span> শ্রীমতী লক্ষ্মী দাস</p>
+                    <p><span>ভাই:</span> অমিত দাস</p>
+                    <p><span>বোন:</span> প্রিয়া দাস</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="invite.html" class="btn">আমন্ত্রণ পত্রটি পড়ুন ➡️</a>
+    </div>
+
+</body>
+</html>

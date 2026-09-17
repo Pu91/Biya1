@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সাদর আমন্ত্রণ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            /* ডার্ক ম্যাজিকাল রেড ব্যাকগ্রাউন্ড */
+            background: radial-gradient(circle, #2a0808 0%, #110000 100%);
+            display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            width: 100%; max-width: 750px; 
+            background: #fffcf2; /* কার্ডের অরিজিনাল অফ-হোয়াইট কালার */
+            padding: 50px 40px;
+            border-radius: 15px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            border: 3px solid #d4af37; 
+            text-align: center; 
+            position: relative;
+        }
+
+        /* কার্ডের চারকোণায় সুন্দর কর্নার ডিজাইন */
+        .corner {
+            position: absolute; width: 40px; height: 40px;
+            border: 4px solid #d4af37;
+        }
+        .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; border-radius: 10px 0 0 0; }
+        .top-right { top: 15px; right: 15px; border-left: none; border-bottom: none; border-radius: 0 10px 0 0; }
+        .bottom-left { bottom: 15px; left: 15px; border-right: none; border-top: none; border-radius: 0 0 0 10px; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; border-radius: 0 0 10px 0; }
+
+        /* বিয়ের লোগো */
+        .wedding-icon {
+            font-size: 50px; margin-bottom: 5px; color: #b71c1c; text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 { 
+            color: #7a0b10; font-size: 34px; margin-bottom: 25px; 
+            font-family: 'Georgia', serif; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        
+        h2::before, h2::after {
+            content: ''; width: 50px; height: 2px; background: #d4af37; display: inline-block;
+        }
+
+        /* স্টাইলিশ আমন্ত্রণের লেখা */
+        .invite-text {
+            font-size: 22px; line-height: 2; color: #333; 
+            margin: 20px 0; padding: 20px; 
+            font-family: 'Georgia', serif; 
+            font-style: italic; /* লেখাকে রাজকীয় বাঁকা করার জন্য */
+            position: relative;
+        }
+
+        .invite-text p {
+            margin-bottom: 12px;
+        }
+
+        .invite-text .highlight {
+            color: #b71c1c; font-size: 24px; font-weight: bold;
+        }
+
+        /* তারিখ ও লোকেশনের স্পেশাল বক্স */
+        .details-box {
+            background: linear-gradient(135deg, #7a0b10, #b91118);
+            color: #fffcf2;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px dashed #d4af37;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .details-box::before {
+            content: '❁'; position: absolute; font-size: 100px; color: rgba(212, 175, 55, 0.1);
+            right: -20px; bottom: -30px; transform: rotate(45deg);
+        }
+
+        .details-box p { margin: 12px 0; font-size: 19px; letter-spacing: 1px; }
+        
+        .details-box span {
+            color: #d4af37; font-weight: bold; font-size: 22px; margin-right: 8px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* স্টাইলিশ বাটন */
+        .btn {
+            display: inline-block; margin-top: 35px; padding: 14px 40px;
+            background: linear-gradient(45deg, #d4af37, #fbc02d); color: #7a0b10; 
+            border: 2px solid #7a0b10; border-radius: 30px; font-size: 18px; font-weight: bold; 
+            cursor: pointer; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5); 
+            animation: pulse 1.5s infinite; transition: 0.3s;
+        }
+        .btn:hover { background: #7a0b10; color: #fffcf2; border-color: #d4af37; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        @media (max-width: 650px) {
+            .container { padding: 40px 20px; }
+            h2 { font-size: 26px; }
+            h2::before, h2::after { width: 30px; }
+            .invite-text { font-size: 18px; padding: 10px; line-height: 1.8; }
+            .invite-text .highlight { font-size: 20px; }
+            .details-box p { font-size: 16px; }
+            .details-box span { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- চারদিকের কর্নার বর্ডার -->
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <!-- বিয়ের লোগো (পায়রা ছাড়া) -->
+        <div class="wedding-icon">❁ 💍 ❁</div>
+        <h2>সাদর আমন্ত্রণ</h2>
+        
+        <!-- নতুন স্টাইলের রোমান্টিক লেখা -->
+        <div class="invite-text">
+            <p>দুটি হৃদয়ের এক হওয়ার এই পবিত্র ও শুভ লগ্নে,</p>
+            <p>আমাদের দীর্ঘদিনের ভালোবাসা আজ পূর্ণতা পেতে চলেছে।</p>
+            <p class="highlight">আগামী ২৫শে ডিসেম্বর, শুক্রবার</p>
+            <p>আমরা দুজন বিবাহ বন্ধনে আবদ্ধ হতে চলেছি।</p>
+            <p>আপনাদের উপস্থিতি ও আশীর্বাদ আমাদের এই নতুন পথচলাকে আরও স্পেশাল করে তুলবে।</p>
+        </div>
+
+        <!-- তারিখ ও লোকেশনের বক্স -->
+        <div class="details-box">
+            <p><span>📅 সময়:</span> সন্ধ্যা ৭:০০ ঘটিকা</p>
+            <p><span>📍 স্থান:</span> সিলভার স্প্রিং ব্যাঙ্কোয়েট, শিলিগুড়ি</p>
+        </div>
+        
+        <!-- পরবর্তী পেজে যাওয়ার বাটন -->
+        <a href="google map.html" class="btn">আসল চমক দেখতে ক্লিক করুন 🎁</a>
+    </div>
+
+</body>
+</html>
